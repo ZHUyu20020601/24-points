@@ -176,9 +176,23 @@ void print(){
 
 int main()
 {
-    double a[4];
-    scanf_s("%lf%lf%lf%lf", & a[0], & a[1], & a[2], & a[3]);
-    circulate(a);
+    int n,i;
+    double* a;
+    printf("请输入需要计算几个24点(<10)：");
+    scanf_s("%d", &n);
+    printf("\n");
+    a = (double*)malloc(4 * n * sizeof(double));
+    for (i = 0;i < 4 * n;i++) {
+        scanf_s("%lf", &a[i]);
+    }
+    printf("\n");
+    printf("结果是：\n");
+    for (i = 0;i < 4 * n;i += 4) {
+        circulate(a + i);
+    }
+    printf("按任意键终止\n");
+    getchar();
+    getchar();
 //    printf("%d\n", Calculate_three(1,2,2,1,1,1));
 }
 
