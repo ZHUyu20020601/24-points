@@ -180,16 +180,18 @@ int main()
     double* a;
     printf("请输入需要计算几个24点(<10)：");
     scanf_s("%d", &n);
-    printf("\n");
+    printf("请输入%d个运算数：\n",4*n);
+    printf("------------------\n");
     a = (double*)malloc(4 * n * sizeof(double));
     for (i = 0;i < 4 * n;i++) {
         scanf_s("%lf", &a[i]);
     }
-    printf("\n");
+    printf("-------------------\n");
     printf("结果是：\n");
     for (i = 0;i < 4 * n;i += 4) {
         circulate(a + i);
     }
+    printf("-------------------\n");
     printf("按任意键终止\n");
     getchar();
     getchar();
